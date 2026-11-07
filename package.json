@@ -94,5 +94,13 @@
     "*.{md,mdx}": [
       "cspell --no-progress --no-must-find-files"
     ]
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "11.0.1"
+    },
+    "satori": {
+      "fflate": "0.7.5"
+    }
   }
 }
