@@ -101,6 +101,7 @@
     },
     "satori": {
       "fflate": "0.7.5"
-    }
+    },
+    "fast-xml-parser": "5.12.1"
   }
 }
