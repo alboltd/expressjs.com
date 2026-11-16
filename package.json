@@ -1,32 +1,6 @@
 {
-  "name": "expressjs-website",
-  "type": "module",
-  "private": true,
-  "description": "Express.js Website",
   "author": {
     "name": "Express.js Documentation Team and Contributors"
-  },
-  "license": "CC-BY-SA-4.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/expressjs/expressjs.com.git"
-  },
-  "scripts": {
-    "dev": "astro dev",
-    "build": "NODE_OPTIONS=--max-old-space-size=4096 astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "spell": "cspell --no-progress \"**/*.{md,mdx}\"",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "check": "npm run format:check && npm run lint && npm run spell",
-    "fix": "npm run format && npm run lint:fix",
-    "prepare": "husky",
-    "lint-staged": "lint-staged",
-    "test:unit": "node --test tests/unit/*.test.mjs",
-    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.3.5",
@@ -36,7 +10,7 @@
     "@astrojs/sitemap": "^3.7.4",
     "@orama/core": "^1.2.19",
     "@orama/ui": "^1.5.4",
-    "astro": "^7.4.4",
+    "astro": "7.4.12",
     "astro-expressive-code": "^0.44.3",
     "astro-icon": "^1.2.0",
     "gray-matter": "^4.0.3",
@@ -50,14 +24,7 @@
     "sharp": "^0.35.5",
     "unist-util-visit": "^5.2.0"
   },
-  "packageManager": "npm@11.14.1",
-  "devEngines": {
-    "runtime": {
-      "name": "node",
-      "version": ">=24.15.0",
-      "onFail": "error"
-    }
-  },
+  "description": "Express.js Website",
   "devDependencies": {
     "@csstools/postcss-global-data": "^4.0.0",
     "@eslint/js": "^9.39.2",
@@ -83,6 +50,14 @@
     "unplugin-icons": "^24.0.0",
     "vite-plugin-svgr": "^5.2.0"
   },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "onFail": "error",
+      "version": "\u003e=24.15.0"
+    }
+  },
+  "license": "CC-BY-SA-4.0",
   "lint-staged": {
     "*.{js,jsx,ts,tsx,astro}": [
       "eslint --fix",
@@ -95,13 +70,38 @@
       "cspell --no-progress --no-must-find-files"
     ]
   },
+  "name": "expressjs-website",
   "overrides": {
     "@typescript-eslint/typescript-estree": {
       "minimatch": "11.0.1"
     },
+    "fast-xml-parser": "5.12.1",
     "satori": {
       "fflate": "0.7.5"
-    },
-    "fast-xml-parser": "5.12.1"
-  }
+    }
+  },
+  "packageManager": "npm@11.14.1",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/expressjs/expressjs.com.git"
+  },
+  "scripts": {
+    "astro": "astro",
+    "build": "NODE_OPTIONS=--max-old-space-size=4096 astro build",
+    "check": "npm run format:check \u0026\u0026 npm run lint \u0026\u0026 npm run spell",
+    "dev": "astro dev",
+    "fix": "npm run format \u0026\u0026 npm run lint:fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "lint-staged": "lint-staged",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky",
+    "preview": "astro preview",
+    "spell": "cspell --no-progress \"**/*.{md,mdx}\"",
+    "test:e2e": "playwright test",
+    "test:unit": "node --test tests/unit/*.test.mjs"
+  },
+  "type": "module"
 }
